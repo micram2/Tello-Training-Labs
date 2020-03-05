@@ -46,14 +46,20 @@ recvThread.start()
 # Square Function
 def square():
     for i in range(4):
-        sendmsg('forward 100') #Drone will go forward 100cm
+        sendmsg('forward 250') #Drone will go forward 100cm
         sendmsg('ccw 90') #Drone will turn counter clockwise 90 degrees
 
 def triangle():
-    for in in range(4):
+    for i in range(3):
         sendmsg('forward 100') #Drone will go forward 100cm
         sendmsg('ccw 120') #Drone will turn counter clockwise 90 degrees
 
+def test():
+    sendmsg('up 50')
+    for i in range(4):
+        sendmsg('forward 350')
+        sendmsg('up 10')
+        sendmsg('')
 print("\nMiles Cramer")
 print("Program Name: Tello Training Lab - Square Function ")
 print("Date: 3/3/20 ")
@@ -67,10 +73,10 @@ try:
         print("\nStarting Drone!\n")
 
         sendmsg('command', 0)
-        sendmsg('takeoff')
+        sendmsg('takeoff', 8)
 
-        square() #Calling function square
-
+        #square() #Calling function square
+        triangle()
 
         sendmsg('land')
 
