@@ -10,14 +10,22 @@ import threading, socket, sys, time, subprocess
 def cube():
    sendmsg('up 100')
    sendmsg('forward   200')
-   sendmsg('right 200')
-   sendmsg('right 200')
-   sendmsg('right 200')
+   sendmsg('cw 90')
+   sendmsg('forward 200')
+   sendmsg('cw 90')
+   sendmsg('forward 200')
+   sendmsg('cw 90')
+   sendmsg('forward 200')
    sendmsg('down 50')
    for i in range(4):
-        sendmsg('right 200')
+        sendmsg('cw 90')
+        sendmsg('forward 200')
         sendmsg('up 50')
         sendmsg('down 50')
+    sendmsg('cw 135')
+    sendmsg('forward 100')
+    sendmsg('ccw 45')
+    sendmsg('flip b')
 
 
 host = ''
