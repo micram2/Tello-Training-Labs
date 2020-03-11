@@ -9,23 +9,25 @@ import threading, socket, sys, time, subprocess
 
 def cube():
    sendmsg('up 100')
-   sendmsg('forward   200')
+   sendmsg('forward   150')
    sendmsg('cw 90')
-   sendmsg('forward 200')
+   sendmsg('forward 150')
    sendmsg('cw 90')
-   sendmsg('forward 200')
+   sendmsg('forward 150')
    sendmsg('cw 90')
-   sendmsg('forward 200')
+   sendmsg('forward 150')
    sendmsg('down 50')
    for i in range(4):
         sendmsg('cw 90')
-        sendmsg('forward 200')
+        sendmsg('forward 150')
         sendmsg('up 50')
         sendmsg('down 50')
     sendmsg('cw 135')
-    sendmsg('forward 100')
+    sendmsg('forward 75')
     sendmsg('ccw 45')
+    sendmsg('up 60')
     sendmsg('flip b')
+    sendmsg('flip f')
 
 
 host = ''
@@ -66,9 +68,9 @@ recvThread.start()
 # CREATE FUNCTIONS HERE....
 
 
-print("\nFirst & Last Names")
-print("Program Name: ")
-print("Date: ")
+print("\nMiles And Carson")
+print("Program Name: Cube ")
+print("Date: 3/11/20 ")
 print("\n****CHECK YOUR TELLO WIFI ADDRESS****")
 print("\n****CHECK SURROUNDING AREA BEFORE FLIGHT****")
 ready = input('\nAre you ready to take flight: ')
@@ -80,8 +82,6 @@ try:
 
         sendmsg('command', 0)
         sendmsg('takeoff')
-
-
 
 
         cube()
